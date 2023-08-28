@@ -26,7 +26,7 @@ struct ProfileView: View {
                         
                         
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(user.fullname)
+                            Text(user.fullName)
                                 .fontWeight(.semibold)
                                 .padding(.top, 4)
                             
@@ -51,6 +51,12 @@ struct ProfileView: View {
                 
                 Section("Account") {
                     Button {
+                        print("Edit Account")
+                        viewModel.isEditProfileViewOpen = true
+                    } label: {
+                        SettingsRowView(imageName: "pencil", title: "Edit Account Details", tintColor: .green)
+                    }
+                    Button {
                         viewModel.singOut()
                     } label: {
                         SettingsRowView(imageName: "arrow.left.circle.fill",
@@ -64,6 +70,8 @@ struct ProfileView: View {
                                         title: "Delete Account",
                                         tintColor: .red)
                     }
+                    .disabled(true)
+                    .opacity(0.5)
                     
                 }
             }
@@ -74,5 +82,13 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(AuthViewModel())
+            .environmentObject(ErrorHandlingModel())
+    }
+}
+
+struct Previews_ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

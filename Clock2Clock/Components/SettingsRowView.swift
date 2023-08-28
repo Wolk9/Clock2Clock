@@ -17,6 +17,7 @@ struct SettingsRowView: View {
             Image(systemName: imageName)
                 .imageScale(.small)
                 .font(.title)
+                .fontWeight(.semibold)
                 .foregroundColor(tintColor)
             
             Text(title)

@@ -9,10 +9,12 @@ import SwiftUI
 
 struct RegistrationView: View {
     @State private var email = ""
-    @State private var fullname = ""
+    @State private var firstName = ""
+    @State private var lastName = ""
     @State private var password = ""
     @State private var confirmPassword = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var errorModel: ErrorHandlingModel
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
@@ -32,9 +34,12 @@ struct RegistrationView: View {
                               title: "Email Address",
                               placeHolder: "name@example.com")
                     .autocapitalization(.none)
-                    InputView(text: $fullname,
-                              title: "Full Name",
-                              placeHolder: "Enter your Full Name")
+                    InputView(text: $firstName,
+                              title: "First Name",
+                              placeHolder: "Enter your First Name")
+                    InputView(text: $lastName,
+                              title: "Last Name",
+                              placeHolder: "Enter your Last Name")
                     InputView(text: $password,
                               title: "Password",
                               placeHolder: "Enter your password",
@@ -65,9 +70,17 @@ struct RegistrationView: View {
                 
                 Button {
                     Task {
-                        try await viewModel.createUser(withEmail: email,
-                                                       password: password,
-                                                       fullName: fullname)
+                        await viewModel.createUser(withEmail: email,
+                                                   password: password,
+                                                   firstName: firstName,
+                                                   lastName: lastName,
+                                                   fullName: "\(firstName) \(lastName)",
+                                                   dob: "",
+                                                   contractDate: "",
+                                                   hoursPerWeek: 0,
+                                                   role: "user",
+                                                   errorHandler: errorModel
+                        )
                     }
                 } label: {
                     HStack {
@@ -111,7 +124,8 @@ extension RegistrationView: AuthenticationFormProtocol {
         && email.contains("@")
         && !password.isEmpty
         && password.count > 5
-        && !fullname.isEmpty
+        && !firstName.isEmpty
+        && !lastName.isEmpty
         && confirmPassword == password
     }
 }

@@ -23,6 +23,8 @@
 		FAEBF3912A9C03080009C62A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FAEBF3902A9C03080009C62A /* FirebaseFirestore */; };
 		FAEBF3932A9C03080009C62A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FAEBF3922A9C03080009C62A /* FirebaseFirestoreSwift */; };
 		FAEBF3972A9C03730009C62A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEBF3962A9C03730009C62A /* AuthViewModel.swift */; };
+		FAEBF3992A9CB4870009C62A /* ErrorHandlingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEBF3982A9CB4870009C62A /* ErrorHandlingModel.swift */; };
+		FAEBF39B2A9D22690009C62A /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEBF39A2A9D22690009C62A /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		FAEBF3872A9BFF710009C62A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FAEBF3892A9C02710009C62A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FAEBF3962A9C03730009C62A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		FAEBF3982A9CB4870009C62A /* ErrorHandlingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingModel.swift; sourceTree = "<group>"; };
+		FAEBF39A2A9D22690009C62A /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 			children = (
 				FAEBF37D2A9BEE4D0009C62A /* LoginView.swift */,
 				FAEBF3812A9BF8010009C62A /* RegistrationView.swift */,
+				FAEBF39A2A9D22690009C62A /* EditProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 		FAEBF3952A9C034B0009C62A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FAEBF3982A9CB4870009C62A /* ErrorHandlingModel.swift */,
 				FAEBF3962A9C03730009C62A /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
@@ -254,6 +260,8 @@
 				FAEBF37E2A9BEE4D0009C62A /* LoginView.swift in Sources */,
 				FAEBF3802A9BEFD10009C62A /* InputView.swift in Sources */,
 				FAEBF3692A9BEC830009C62A /* ContentView.swift in Sources */,
+				FAEBF39B2A9D22690009C62A /* EditProfileView.swift in Sources */,
+				FAEBF3992A9CB4870009C62A /* ErrorHandlingModel.swift in Sources */,
 				FAEBF3672A9BEC830009C62A /* Clock2ClockApp.swift in Sources */,
 				FAEBF3882A9BFF710009C62A /* User.swift in Sources */,
 				FAEBF3842A9BFB410009C62A /* ProfileView.swift in Sources */,

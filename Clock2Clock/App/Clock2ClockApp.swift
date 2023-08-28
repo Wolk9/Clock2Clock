@@ -11,6 +11,7 @@ import Firebase
 @main
 struct Clock2ClockApp: App {
     @StateObject var viewModel = AuthViewModel()
+    @StateObject var errorModel = ErrorHandlingModel()
     
     init() {
         FirebaseApp.configure()
@@ -20,7 +21,7 @@ struct Clock2ClockApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
-            
+                .environmentObject(errorModel)
         }
     }
 }

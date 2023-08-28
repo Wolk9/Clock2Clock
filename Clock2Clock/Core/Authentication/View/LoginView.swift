@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var errorModel: ErrorHandlingModel
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
@@ -43,7 +44,7 @@ struct LoginView: View {
                 
                 Button {
                     Task {
-                        try await viewModel.signIn(withEmail: email, password: password)
+                        await viewModel.signIn(withEmail: email, password: password, errorHandler: errorModel)
                     }
                 } label: {
                     HStack {
